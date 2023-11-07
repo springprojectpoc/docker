@@ -1,0 +1,14 @@
+1.Create Dockerfile
+
+FROM openjdk:8
+EXPOSE 9090
+#ADD source_folder destination_source_folder. Note : Always write comment at new line
+ADD target/hello-world.war . 
+ENTRYPOINT ["java","-jar","hello-world.war"]
+
+2.docker build -t repo_name .
+
+3.check created repository with name repo_name
+F:\DOCKER\spring-boot-war-example-master>docker images
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+repo_name    latest    d4179fc04125   11 minutes ago   543MB
